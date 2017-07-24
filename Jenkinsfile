@@ -10,7 +10,7 @@ pipeline {
     stage('run tests') {
       steps {
         readFile 'tap_lst.txt'
-        sh 'echo tap_lst.txt'
+        sh 'cat tap_lst.txt'
       }
     }
   }
