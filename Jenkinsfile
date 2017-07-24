@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('update') {
+      steps {
+        sh 'pwd'
+        sh 'echo "12D2 64E3" > tap_lst.txt'
+      }
+    }
+    stage('run tests') {
+      steps {
+        readFile 'tap_lst.txt'
+        sh 'echo tap_lst.txt'
+      }
+    }
+  }
+}
