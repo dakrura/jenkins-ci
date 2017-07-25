@@ -1,22 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'ubuntu'
-      args 'latest'
-    }
-    
-  }
+  agent none
   stages {
-    stage('update') {
+    stage('upgrade') {
       steps {
-        sh 'pwd'
-        sh 'echo "12D2 64E3" > tap_lst.txt'
-      }
-    }
-    stage('run tests') {
-      steps {
-        readFile 'tap_lst.txt'
-        sh 'cat tap_lst.txt'
+        echo 'Upgrading..'
+        sh 'ls'
       }
     }
   }
